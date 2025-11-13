@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Weather Project",
+    "desc": "Built a real-time weather forecasting web application using Django and OpenWeatherMap API to fetch and display dynamic weather data by city name.",
+    "image": "Weather",
+    "category": "Django Basic Project",
+    "links": {
+      "view": "https://github.com/SujayKumarMondal/Weather_Django",
+      "code": "https://github.com/SujayKumarMondal/Weather_Django"
+    }
+  },
+  {
+    "name": "FastAPI Auth Project",
+    "desc": "Developed a secure user authentication system using FastAPI, OAuth2, and JWT, enabling token-based access control with hashed credentials via bcrypt.",
+    "image": "FastAPI_Auth",
+    "category": "FastAPI Basic Auth Project",
+    "links": {
+      "view": "https://github.com/SujayKumarMondal/FastAPI-OAuth2",
+      "code": "https://github.com/SujayKumarMondal/FastAPI-OAuth2"
+    }
+  },
+  {
+    "name": "E-Commerce & Market Data Platform",
+    "desc": "Built a full-stack FastAPI microservices platform. It combines e-commerce functionalities with real-time market data analytics.",
+    "image": "Finnhub",
+    "category": "E-Commerce ",
+    "links": {
+      "view": "https://github.com/SujayKumarMondal/finhub-market-data",
+      "code": "https://github.com/SujayKumarMondal/finhub-market-data"
+    }
+  },
+  {
+    "name": "MFA Auth System",
+    "desc": "Multi-Factor Authentication (MFA) with TOTP & OTP, JWT-Based Authentication with Refresh Tokens,Redis-Backed OTP & Session Caching, React (Vite) Frontend with Protected Routes & Token Handling",
+    "image": "MFA",
+    "category": "Full Stack Web Development",
+    "links": {
+      "view": "https://github.com/SujayKumarMondal/MFA-Django-React",
+      "code": "https://github.com/SujayKumarMondal/MFA-Django-React"
+    }
+  }
+]
