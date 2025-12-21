@@ -1,5 +1,15 @@
 [
   {
+    "name": "Chatbot Project",
+    "desc": "A full-stack AI chatbot application built using Django for the backend and Next.js for the frontend with MySQL as DB.",
+    "image": "chatbot",
+    "category": "Full-Stack AI Web Application",
+    "links": {
+      "view": "https://github.com/SujayKumarMondal/ChatBot-Django-React",
+      "code": "https://github.com/SujayKumarMondal/ChatBot-Django-React"
+    }
+  },
+  {
     "name": "Weather Project",
     "desc": "Built a real-time weather forecasting web application using Django and OpenWeatherMap API to fetch and display dynamic weather data by city name.",
     "image": "Weather",
