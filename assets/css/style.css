@@ -40,6 +40,59 @@ html::-webkit-scrollbar-thumb {
   background: #420177;
 }
 
+/* Custom Tooltip Styling */
+a[title] {
+  position: relative;
+}
+
+a[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 115%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #2b3dda;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  pointer-events: none;
+  opacity: 1;
+  animation: tooltipFade 0.3s ease-in-out;
+}
+
+a[title]:hover::before {
+  content: '';
+  position: absolute;
+  left: 106%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-right-color: #2b3dda;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes tooltipFade {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+header {
+  position: relative;
+  z-index: 1000;
+}
+
 /* pre loader start */
 .loader-container {
   position: fixed;
