@@ -38,13 +38,13 @@ $(document).ready(function () {
     });
 
     // Initialize EmailJS
-    emailjs.init("9koFshIaDP-JXamB8"); // Replace YOUR_PUBLIC_KEY with your EmailJS public key
+    emailjs.init("qq38i3ClfTWehKZ11"); // Replace YOUR_PUBLIC_KEY with your EmailJS public key
 
     // Handle EmailJS form submission
     document.getElementById("emailjs-contact-form").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
 
-        emailjs.sendForm("service_7p1a42e", "template_6czapu3", "#emailjs-contact-form")
+        emailjs.sendForm("service_le3e8bj", "template_wribnl8", "#emailjs-contact-form")
             .then(function (response) {
                 console.log("SUCCESS!", response.status, response.text);
                 alert("Email sent successfully!");
@@ -70,9 +70,32 @@ document.addEventListener('visibilitychange',
         }
     });
 
+// <!-- calculate age dynamically -->
+function calculateAge() {
+    const birthDate = new Date(1998, 0, 10); // January 10, 1998
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    
+    return age;
+}
+
+// Update age on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const ageElement = document.getElementById('userAge');
+    if (ageElement) {
+        ageElement.textContent = calculateAge();
+    }
+});
+// <!-- age calculation ends -->
+
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Python Backend Development", "API Development", "Database Management" ],
+    strings: ["Python Backend Development", "Building Scalable APIs with FastAPI", "Database Design and Optimization", "RESTful API Design", "Microservices Architecture", "Cloud Infrastructure", "System Design"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,

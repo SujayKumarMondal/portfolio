@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="keywords"
-    content="Sujay Kumar Mondal, portfolio, Sujay, full stack dev, personal portfolio, portfolio design, portfolio website, personal portfolio" />
+    content="Sujay Kumar Mondal, Python Backend Developer, FastAPI, Django, PostgreSQL, API Development, Backend Engineer, portfolio, personal portfolio" />
   <meta name="description"
-    content="Welcome to Sujay's Portfolio. Full-Stack Web Developer and Open Source enthusiast." />
+    content="Sujay Kumar Mondal - Professional Python Backend Developer | FastAPI | Django | REST APIs | PostgreSQL | AWS | System Design" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <!-- Font Awesome -->
@@ -37,6 +37,7 @@
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#expertise">Expertise</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -104,7 +105,7 @@
 
         <div class="box-container">
           <div class="box">
-            <p><span> Age : </span>28</p>
+            <p><span> Age : </span><span id="userAge">28</span></p>
             <p><span> Phone : </span>+91 8617228703</p>
           </div>
           <div class="box">
@@ -151,13 +152,65 @@
   </section>
   <!-- skills section ends -->
 
+  <!-- backend expertise section starts -->
+  <section class="expertise" id="expertise">
+    <h2 class="heading"><i class="fas fa-cogs"></i> Backend <span>Expertise</span></h2>
+    
+    <div class="container">
+      <div class="card">
+        <h3><i class="fas fa-cube"></i> API Development</h3>
+        <p>Expert in designing and building production-grade REST APIs using FastAPI and Django. Specializing in high-performance, scalable API architectures with proper documentation and versioning.</p>
+        <div class="tags">
+          <span class="tag">FastAPI</span>
+          <span class="tag">Django</span>
+          <span class="tag">REST</span>
+        </div>
+      </div>
 
-  <!-- education section starts -->
+      <div class="card">
+        <h3><i class="fas fa-database"></i> Database Design</h3>
+        <p>Proficient in schema design, query optimization, and data modeling. Strong expertise with PostgreSQL, MySQL databases for building robust data layers.</p>
+        <div class="tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-shield-alt"></i> Authentication & Security</h3>
+        <p>Expert in implementing JWT/OAuth2 authentication, encryption, secure password handling, and API security best practices to protect user data.</p>
+        <div class="tags">
+          <span class="tag">JWT</span>
+          <span class="tag">OAuth2</span>
+          <span class="tag">bcrypt</span>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <h3><i class="fas fa-bolt"></i> Performance & Caching</h3>
+        <p>Specialized in optimizing query performance, implementing caching strategies with Redis, and building efficient backend systems for high-traffic applications.</p>
+        <div class="tags">
+          <span class="tag">Redis</span>
+          <span class="tag">Optimization</span>
+          <span class="tag">Indexing</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+        <p>Proficient in containerization, CI/CD pipelines, and cloud deployments. Experience with modern DevOps practices for seamless application lifecycle management.</p>
+        <div class="tags">
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- backend expertise section ends -->
   <section class="education" id="education">
 
     <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
 
-    <p class="qoute">Education is not preparation for life; education is life itself..</p>
 
     <div class="box-container">
 
@@ -253,7 +306,7 @@
   </section>
   <!-- experience section ends -->
 
-  <!-- contact section starts -->
+  <!-- unified contact section starts -->
   <section class="contact" id="contact">
 
     <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
@@ -263,63 +316,36 @@
         <div class="image-box">
           <img draggable="false" src="./assets/images/contact1.png" alt="">
         </div>
-        <form id="contact-form">
 
+        <!-- single functional form (uses EmailJS handler in assets/js/script.js) -->
+        <form id="emailjs-contact-form">
           <div class="form-group">
             <div class="field">
-              <input type="text" name="name" placeholder="Name" required>
+              <input type="text" name="user_name" placeholder="Your Name" required>
               <i class='fas fa-user'></i>
             </div>
             <div class="field">
-              <input type="email" name="email" placeholder="Email" required>
+              <input type="email" name="user_email" placeholder="Your Email" required>
               <i class='fas fa-envelope'></i>
             </div>
             <div class="field">
-              <input type="text" name="phone" placeholder="Phone">
+              <input type="text" name="phone" placeholder="Phone (optional)">
               <i class='fas fa-phone-alt'></i>
             </div>
             <div class="message">
-              <textarea placeholder="Message" name="message" required></textarea>
+              <textarea name="message" placeholder="Your Message" required></textarea>
               <i class="fas fa-comment-dots"></i>
             </div>
           </div>
           <div class="button-area">
-            <button type="submit">
-              Submit <i class="fa fa-paper-plane"></i></button>
+            <button type="submit">Send Message <i class="fa fa-paper-plane"></i></button>
           </div>
         </form>
+
       </div>
     </div>
   </section>
-  <!-- contact section ends -->
-
-
-  <!-- EmailJS Form Section -->
-  <section class="emailjs-form" id="emailjs-form">
-    <h2 class="heading"><i class="fas fa-envelope"></i> Contact via <span>Email</span></h2>
-    <div class="container">
-      <form id="emailjs-contact-form">
-        <div class="form-group">
-          <div class="field">
-            <input type="text" name="user_name" placeholder="Your Name" required>
-            <i class='fas fa-user'></i>
-          </div>
-          <div class="field">
-            <input type="email" name="user_email" placeholder="Your Email" required>
-            <i class='fas fa-envelope'></i>
-          </div>
-          <div class="message">
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <i class="fas fa-comment-dots"></i>
-          </div>
-        </div>
-        <div class="button-area">
-          <button type="submit">Send Email <i class="fa fa-paper-plane"></i></button>
-        </div>
-      </form>
-    </div>
-  </section>
-  <!-- EmailJS Form Section ends -->
+  <!-- unified contact section ends -->
 
 
   <!-- footer section starts -->
