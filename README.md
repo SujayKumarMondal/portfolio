@@ -18,7 +18,7 @@ Welcome to my personal portfolio website! This project showcases my work, skills
 
 ## 📬 Contact Me
 Feel free to connect with me for collaboration or queries:
-- **Email**: [hiiiamsujay12@gmail.com](hiiiamsujay12@gmail.com)
+- **Email**: [sujay.mondal.10.01.1998@gmail.com](sujay.mondal.10.01.1998@gmail.com)
 - **GitHub**: [https://github.com/SujayKumarMondal](#)
 
 ---
