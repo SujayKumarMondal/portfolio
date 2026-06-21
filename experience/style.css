@@ -297,6 +297,15 @@ header .navbar ul li a:hover{
    padding-top: 100px;
 }
 
+/* message when no experiences are available */
+.no-experience{
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin: 2.5rem 0;
+  font-weight: 600;
+}
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
   .experience .timeline::after {

@@ -15,6 +15,13 @@ $(document).ready(function(){
             document.querySelector('#scroll-top').classList.remove('active');
         }
     });
+
+    // show fallback message if there are no experience items
+    if($('.experience .timeline').length === 0 || $('.experience .timeline .container').length === 0){
+        $('#no-experience').show();
+    } else {
+        $('#no-experience').hide();
+    }
 });
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
