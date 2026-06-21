@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
-    strings: ["Python Backend Development", "Building Scalable APIs with FastAPI", "Database Design and Optimization", "RESTful API Design", "Microservices Architecture", "Cloud Infrastructure", "System Design"],
+    strings: ["Python Backend Development", "Building Scalable APIs with FastAPI", "Database Design and Optimization", "RESTful API Design"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
