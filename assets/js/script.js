@@ -94,13 +94,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // <!-- age calculation ends -->
 
 // <!-- typed js effect starts -->
-var typed = new Typed(".typing-text", {
-    strings: ["Python Backend Development", "Building Scalable APIs with FastAPI", "Database Design and Optimization", "RESTful API Design"],
-    loop: true,
-    typeSpeed: 50,
-    backSpeed: 25,
-    backDelay: 500,
-});
+if (document.querySelector('.typing-text')) {
+    new Typed(".typing-text", {
+        strings: ["Python Backend Development", "Building Scalable APIs with FastAPI", "Database Design and Optimization", "RESTful API Design"],
+        loop: true,
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 500,
+    });
+}
 // <!-- typed js effect ends -->
 
 async function fetchData(type = "skills") {
@@ -115,12 +117,13 @@ async function fetchData(type = "skills") {
 
 function showSkills(skills) {
     let skillsContainer = document.getElementById("skillsContainer");
+    if (!skillsContainer) return;
     let skillHTML = "";
     skills.forEach(skill => {
         skillHTML += `
         <div class="bar">
               <div class="info">
-                <img src=${skill.icon} alt="skill" />
+                <img src="${skill.icon}" alt="${skill.name}" />
                 <span>${skill.name}</span>
               </div>
             </div>`
@@ -130,11 +133,12 @@ function showSkills(skills) {
 
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
+    if (!projectsContainer) return;
     let projectHTML = "";
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
         projectHTML += `
     <div class="box tilt">
-      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="project 1" />
+      <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
@@ -152,9 +156,11 @@ function showProjects(projects) {
     projectsContainer.innerHTML = projectHTML;
 
     // <!-- tilt js effect starts -->
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-    });
+    if (document.querySelectorAll(".tilt").length) {
+        VanillaTilt.init(document.querySelectorAll(".tilt"), {
+            max: 15,
+        });
+    }
     // <!-- tilt js effect ends -->
 
     /* ===== SCROLL REVEAL ANIMATION ===== */
@@ -170,18 +176,28 @@ function showProjects(projects) {
 
 }
 
-fetchData().then(data => {
-    showSkills(data);
-});
+function initializePortfolio() {
+    fetchData().then(data => {
+        showSkills(data);
+    }).catch(error => console.error('Skills load failed:', error));
 
-fetchData("projects").then(data => {
-    showProjects(data);
-});
+    fetchData("projects").then(data => {
+        showProjects(data);
+    }).catch(error => console.error('Projects load failed:', error));
+}
+
+if (document.readyState !== 'loading') {
+    initializePortfolio();
+} else {
+    document.addEventListener('DOMContentLoaded', initializePortfolio);
+}
 
 // <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
-});
+if (document.querySelectorAll(".tilt").length) {
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+        max: 15,
+    });
+}
 // <!-- tilt js effect ends -->
 
 
