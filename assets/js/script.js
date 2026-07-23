@@ -134,7 +134,6 @@ function showSkills(skills) {
 function showProjects(projects) {
     let projectsContainer = document.querySelector("#work .box-container");
     if (!projectsContainer) return;
-    if (projectsContainer.dataset.githubManaged === "true") return;
     let projectHTML = "";
     projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
         projectHTML += `
