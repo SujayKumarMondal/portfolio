@@ -19,6 +19,11 @@ __pycache__/
 # Environment variables
 .env
 .env.local
+.env.*
+
+# Next.js build output
+.next/
+out/
 
 # Build output
 dist/
@@ -39,3 +44,10 @@ build/
 
 venv
 venv/
+node_modules/
+.DS_Store
+.env.local.localhistory
+.env.local.*
+.cache
+.idea/
+.vscode/
