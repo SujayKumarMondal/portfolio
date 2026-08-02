@@ -42,7 +42,6 @@ function getProjects() {
 
 function showProjects(projects) {
     let projectsContainer = document.querySelector(".work .box-container");
-    if (projectsContainer.dataset.githubManaged === "true") return;
     let projectsHTML = "";
     projects.forEach(project => {
         projectsHTML += `
