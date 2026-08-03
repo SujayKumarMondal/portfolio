@@ -18,9 +18,9 @@ const query = `query ContributionCalendar($login:String!, $from:DateTime!, $to:D
 }`;
 
 async function fetchContributionYear(username, from, to) {
-  const token = process.env.GITHUB_TOKEN;
+  const token = process.env.GITHUB_TOKEN_NEW;
   if (!token) {
-    throw new Error('GITHUB_TOKEN is not set in the runtime environment.');
+    throw new Error('GITHUB_TOKEN_NEW is not set in the runtime environment.');
   }
 
   const response = await fetch('https://api.github.com/graphql', {

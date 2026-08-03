@@ -66,7 +66,7 @@ export default function GitHubContributionsClient() {
       <div className="contributions-fallback">
         <p>
           To show your exact GitHub activity board, add a GitHub Personal Access Token as the environment variable
-          <code>GITHUB_TOKEN</code> and rebuild the site.
+          <code>GITHUB_TOKEN_NEW</code> and rebuild the site.
         </p>
         <p>The token requires only public repo access and is used on the build server to load contribution data from GitHub.</p>
       </div>

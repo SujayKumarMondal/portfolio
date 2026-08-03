@@ -1,5 +1,5 @@
 async function fetchContributionYear(username, from, to, alias) {
-  const token = process.env.GITHUB_TOKEN;
+  const token = process.env.GITHUB_TOKEN_NEW;
   if (!token) {
     return null;
   }
@@ -102,7 +102,7 @@ export default async function GitHubContributions({ username }) {
         <div className="contributions-fallback">
           <p>
             To show your exact GitHub activity board, add a GitHub Personal Access Token as the environment variable
-            <code>GITHUB_TOKEN</code> and rebuild the site.
+            <code>GITHUB_TOKEN_NEW</code> and rebuild the site.
           </p>
           <p>
             The token only needs public repo access and is used on the build server to load contribution data from GitHub.
