@@ -20,7 +20,7 @@ const query = `query ContributionCalendar($login:String!, $from:DateTime!, $to:D
 async function fetchContributionYear(username, from, to) {
   const token = process.env.GITHUB_TOKEN;
   if (!token) {
-    return null;
+    throw new Error('GITHUB_TOKEN is not set in the runtime environment.');
   }
 
   const response = await fetch('https://api.github.com/graphql', {
@@ -37,7 +37,8 @@ async function fetchContributionYear(username, from, to) {
   });
 
   if (!response.ok) {
-    return null;
+    const text = await response.text();
+    throw new Error(`GitHub API error: ${response.status} ${response.statusText} - ${text}`);
   }
 
   const result = await response.json();
@@ -45,7 +46,7 @@ async function fetchContributionYear(username, from, to) {
 }
 
 export async function GET() {
-  const username = 'SujayKumarMondal';
+  const username = process.env.GITHUB_USERNAME || 'SujayKumarMondal';
   const currentYear = new Date().getUTCFullYear();
   // Return current year and previous 4 years (descending)
   const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
@@ -54,8 +55,12 @@ export async function GET() {
     years.map(async (year) => {
       const from = `${year}-01-01T00:00:00Z`;
       const to = `${year}-12-31T23:59:59Z`;
-      const contributionCalendar = await fetchContributionYear(username, from, to);
-      return { year, contributionCalendar };
+      try {
+        const contributionCalendar = await fetchContributionYear(username, from, to);
+        return { year, contributionCalendar };
+      } catch (err) {
+        return { year, error: String(err.message) };
+      }
     })
   );
 
