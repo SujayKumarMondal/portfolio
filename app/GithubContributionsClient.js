@@ -39,7 +39,12 @@ export default function GitHubContributionsClient() {
           throw new Error('Unable to fetch GitHub data');
         }
         const data = await resp.json();
-        const entries = data.calendars || [];
+        let entries = data.calendars || [];
+        // ensure descending year order and limit to 5 years
+        entries = entries
+          .slice()
+          .sort((a, b) => Number(b.year) - Number(a.year))
+          .slice(0, 5);
         setContributions(entries);
         setSelectedYear(entries[0] ? String(entries[0].year) : '');
       } catch (err) {

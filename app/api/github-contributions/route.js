@@ -47,7 +47,8 @@ async function fetchContributionYear(username, from, to) {
 export async function GET() {
   const username = 'SujayKumarMondal';
   const currentYear = new Date().getUTCFullYear();
-  const years = [currentYear, currentYear - 1, currentYear - 2];
+  // Return current year and previous 4 years (descending)
+  const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
 
   const calendars = await Promise.all(
     years.map(async (year) => {
